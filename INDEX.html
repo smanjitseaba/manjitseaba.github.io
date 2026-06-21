@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manjit Singh — Tech Mentor & Career Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#16243A;
+    --navy-deep:#0D1726;
+    --gold:#D9A441;
+    --cream:#F5F0E6;
+    --teal:#3E7C7C;
+    --slate:#8A94A6;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--navy-deep);
+    color:var(--cream);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+  }
+  a{color:inherit;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px;}
+
+  /* Header */
+  header{
+    padding:28px 0;
+    border-bottom:1px solid rgba(245,240,230,0.08);
+  }
+  header .wrap{display:flex;justify-content:space-between;align-items:center;}
+  .brand{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:1.15rem;
+    letter-spacing:0.02em;
+  }
+  .brand span{color:var(--gold);}
+  nav a{
+    margin-left:28px;
+    font-size:0.92rem;
+    text-decoration:none;
+    color:var(--slate);
+    transition:color 0.2s;
+  }
+  nav a:hover{color:var(--cream);}
+
+  /* Hero */
+  .hero{
+    padding:88px 0 64px;
+    position:relative;
+  }
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.78rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:18px;
+  }
+  h1{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:clamp(2.2rem, 5vw, 3.4rem);
+    line-height:1.12;
+    max-width:760px;
+    color:var(--cream);
+  }
+  h1 em{
+    font-style:italic;
+    color:var(--gold);
+  }
+  .hero-sub{
+    margin-top:22px;
+    max-width:560px;
+    color:var(--slate);
+    font-size:1.05rem;
+  }
+  .hero-cta{
+    margin-top:36px;
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-block;
+    padding:13px 26px;
+    border-radius:2px;
+    font-size:0.92rem;
+    font-weight:600;
+    text-decoration:none;
+    transition:transform 0.15s ease, background 0.15s ease;
+  }
+  .btn-primary{
+    background:var(--gold);
+    color:var(--navy-deep);
+  }
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{
+    border:1px solid rgba(245,240,230,0.25);
+    color:var(--cream);
+  }
+  .btn-ghost:hover{border-color:var(--gold);}
+
+  /* Stat strip */
+  .stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:rgba(245,240,230,0.08);
+    border-top:1px solid rgba(245,240,230,0.08);
+    border-bottom:1px solid rgba(245,240,230,0.08);
+    margin-top:64px;
+  }
+  .stat{
+    background:var(--navy-deep);
+    padding:28px 24px;
+  }
+  .stat .num{
+    font-family:'JetBrains Mono',monospace;
+    font-size:2rem;
+    font-weight:600;
+    color:var(--gold);
+  }
+  .stat .label{
+    font-size:0.82rem;
+    color:var(--slate);
+    margin-top:4px;
+  }
+
+  /* Ledger / timeline — signature element */
+  .ledger{
+    padding:90px 0 70px;
+  }
+  .section-head{
+    margin-bottom:48px;
+  }
+  .section-tag{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.78rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--teal);
+  }
+  h2{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    font-size:1.9rem;
+    margin-top:10px;
+    color:var(--cream);
+  }
+  .log{
+    border-left:1px solid rgba(245,240,230,0.15);
+  }
+  .log-entry{
+    position:relative;
+    padding:0 0 40px 32px;
+  }
+  .log-entry:last-child{padding-bottom:0;}
+  .log-entry::before{
+    content:'';
+    position:absolute;
+    left:-5px;
+    top:6px;
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:var(--gold);
+  }
+  .log-year{
+    font-family:'JetBrains Mono',monospace;
+    color:var(--gold);
+    font-size:0.95rem;
+    font-weight:600;
+  }
+  .log-text{
+    margin-top:6px;
+    color:var(--slate);
+    max-width:580px;
+  }
+  .log-text strong{color:var(--cream);font-weight:600;}
+
+  /* About */
+  .about{
+    padding:70px 0;
+    border-top:1px solid rgba(245,240,230,0.08);
+  }
+  .about p{
+    max-width:640px;
+    color:var(--slate);
+    font-size:1.02rem;
+  }
+  .about p + p{margin-top:16px;}
+
+  /* Contact */
+  .contact{
+    padding:90px 0 100px;
+    border-top:1px solid rgba(245,240,230,0.08);
+  }
+  form{
+    max-width:520px;
+    margin-top:36px;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  label{
+    font-size:0.82rem;
+    color:var(--slate);
+    display:block;
+    margin-bottom:6px;
+  }
+  input, textarea{
+    width:100%;
+    background:transparent;
+    border:none;
+    border-bottom:1px solid rgba(245,240,230,0.25);
+    color:var(--cream);
+    font-family:'Inter',sans-serif;
+    font-size:1rem;
+    padding:8px 2px;
+    outline:none;
+    transition:border-color 0.2s;
+  }
+  input:focus, textarea:focus{border-color:var(--gold);}
+  textarea{resize:vertical;min-height:90px;}
+  button[type="submit"]{
+    margin-top:8px;
+    align-self:flex-start;
+    background:var(--gold);
+    color:var(--navy-deep);
+    border:none;
+    padding:13px 30px;
+    font-weight:600;
+    font-size:0.95rem;
+    border-radius:2px;
+    cursor:pointer;
+    transition:transform 0.15s ease;
+  }
+  button[type="submit"]:hover{transform:translateY(-2px);}
+  .form-note{
+    font-size:0.82rem;
+    color:var(--slate);
+    margin-top:14px;
+  }
+  .form-status{
+    margin-top:14px;
+    font-size:0.9rem;
+    display:none;
+  }
+
+  footer{
+    padding:32px 0;
+    border-top:1px solid rgba(245,240,230,0.08);
+    color:var(--slate);
+    font-size:0.85rem;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  @media (max-width: 640px){
+    .stats{grid-template-columns:1fr;}
+    nav a{margin-left:16px;font-size:0.85rem;}
+    .hero{padding:64px 0 48px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important;}
+  }
+
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">Manjit <span>Singh</span></div>
+    <nav>
+      <a href="#journey">Journey</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Educator since 2013 · Student mentor</div>
+    <h1>Guiding the next step in your <em>education and career</em>, one honest conversation at a time.</h1>
+    <p class="hero-sub">I'm Manjit Singh. Since 2013 I've worked as an educator, and spent that time helping students figure out what to study, where to apply, and how to actually get there.</p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-primary">Get guidance</a>
+      <a href="#journey" class="btn btn-ghost">See the journey</a>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="num">700+</div>
+      <div class="label">Students guided</div>
+    </div>
+    <div class="stat">
+      <div class="num">2013</div>
+      <div class="label">Career started</div>
+    </div>
+    <div class="stat">
+      <div class="num">13 yrs</div>
+      <div class="label">As an educator</div>
+    </div>
+  </div>
+</section>
+
+<section class="ledger" id="journey">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">Academic & professional records</div>
+      <h2>A career spent teaching — and beside students</h2>
+    </div>
+    <div class="log">
+      <div class="log-entry">
+        <div class="log-year">2013 – 2014</div>
+        <div class="log-text">Punjabi Teacher at <strong>Akal Academy, Benra</strong></div>
+      </div>
+      <div class="log-entry">
+        <div class="log-year">2014 – 2016</div>
+        <div class="log-text">Punjabi Teacher at <strong>Akal Academy, Fatehgarh Gandhuan</strong></div>
+      </div>
+      <div class="log-entry">
+        <div class="log-year">2016 – 2023</div>
+        <div class="log-text">Punjabi Teacher at <strong>Akal Academy, Moonak</strong></div>
+      </div>
+      <div class="log-entry">
+        <div class="log-year">Sept 2023 – Present</div>
+        <div class="log-text">Currently working at <strong>Seaba International Public School</strong></div>
+      </div>
+      <div class="log-entry">
+        <div class="log-year">Throughout</div>
+        <div class="log-text"><strong>700+ students</strong> guided toward their next step in further study and tech careers.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">About</div>
+      <h2>Why students reach out</h2>
+    </div>
+    <p>I've spent over a decade working as an educator — at Akal Academy Benra, Akal Academy Fatehgarh Gandhuan, Akal Academy Moonak, and currently at Seaba International Public School — and almost as long helping students outside the classroom: which courses make sense, how to prepare for further study, and what a realistic path forward actually looks like.</p>
+    <p>No sales pitch, no generic advice. Just direct guidance based on what I've seen work — for 700+ students so far.</p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">Get in touch</div>
+      <h2>Tell me where you're stuck</h2>
+    </div>
+
+    <p style="color:var(--slate); margin-bottom:8px;">Email: <a href="mailto:manjitseaba@gmail.com" style="color:var(--gold); text-decoration:none;">manjitseaba@gmail.com</a></p>
+    <p style="color:var(--slate); margin-bottom:32px;">Phone: <a href="tel:+919417264400" style="color:var(--gold); text-decoration:none;">+91 94172 64400</a></p>
+
+    <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div>
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div>
+        <label for="email">Your email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div>
+        <label for="message">What do you need guidance on?</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button type="submit">Send message</button>
+      <div class="form-status" id="formStatus"></div>
+      <p class="form-note">Replies usually within a few days. Your details are only used to get back to you.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;width:100%;flex-wrap:wrap;gap:10px;">
+    <span>&copy; 2026 Manjit Singh · manjitseaba@gmail.com · +91 94172 64400</span>
+    <span>Tech mentor since 2013</span>
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('formStatus');
+  form.addEventListener('submit', async function(e){
+    if(form.action.includes('YOUR_FORM_ID')) return; // let it fail naturally until configured
+    e.preventDefault();
+    status.style.display = 'block';
+    status.style.color = '#8A94A6';
+    status.textContent = 'Sending...';
+    try{
+      const res = await fetch(form.action, {
+        method:'POST',
+        body:new FormData(form),
+        headers:{'Accept':'application/json'}
+      });
+      if(res.ok){
+        status.style.color = '#3E7C7C';
+        status.textContent = 'Thanks — your message has been sent. I\'ll get back to you soon.';
+        form.reset();
+      } else {
+        status.style.color = '#D9A441';
+        status.textContent = 'Something went wrong. Please try again.';
+      }
+    } catch(err){
+      status.style.color = '#D9A441';
+      status.textContent = 'Something went wrong. Please try again.';
+    }
+  });
+</script>
+
+</body>
+</html>
