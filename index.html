@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manjit Singh — Educator & Student Mentor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue-deep:#0B3B6F;
+    --blue:#1565C0;
+    --blue-light:#E8F3FC;
+    --yellow:#FFC72C;
+    --ink:#16243A;
+    --slate:#5B6B7F;
+    --white:#FFFFFF;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--white);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+  }
+  a{color:inherit;}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 24px;}
+  h1,h2,h3{font-family:'Poppins',sans-serif;}
+
+  /* PILL NAV */
+  header{
+    background:#fff;
+    padding:16px 0 14px;
+    border-bottom:3px solid var(--yellow);
+    box-shadow:0 2px 12px rgba(0,0,0,0.08);
+  }
+  header .wrap{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    align-items:center;
+  }
+  .nav-row{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    flex-wrap:nowrap;
+  }
+  @media (max-width:640px){
+    .nav-row{flex-wrap:wrap;}
+  }
+  .nav-pill{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:var(--yellow);
+    color:var(--ink);
+    text-decoration:none;
+    padding:10px 18px 10px 10px;
+    border-radius:50px;
+    font-family:'Poppins',sans-serif;
+    font-weight:700;
+    font-size:0.92rem;
+    box-shadow:0 3px 10px rgba(255,199,44,0.35);
+    transition:transform 0.15s, box-shadow 0.15s;
+  }
+  .nav-pill:hover{
+    transform:translateY(-2px);
+    box-shadow:0 6px 18px rgba(255,199,44,0.45);
+  }
+  .nav-pill .pill-icon{
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    background:#FFF8DC;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    font-size:1.1rem;
+  }
+  .nav-pill.brand-pill .pill-label{
+    display:flex;
+    flex-direction:column;
+    line-height:1.15;
+  }
+  .nav-pill.brand-pill .pill-label span:first-child{color:var(--ink);}
+  .nav-pill.brand-pill .pill-label span:last-child{color:var(--blue);}
+
+  /* Hero */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg, var(--blue-deep) 0%, var(--blue) 100%);
+    padding:70px 0 0;
+    overflow:hidden;
+  }
+  .hero-inner{
+    display:flex;
+    align-items:center;
+    gap:40px;
+    flex-wrap:wrap;
+    padding-bottom:0;
+  }
+  .hero-text{flex:1; min-width:280px; padding-bottom:70px;}
+  .eyebrow{
+    font-size:0.8rem;
+    font-weight:700;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--yellow);
+    margin-bottom:14px;
+  }
+  h1.hero-title{
+    font-weight:800;
+    font-size:clamp(2rem, 5vw, 3rem);
+    line-height:1.15;
+    color:var(--white);
+    max-width:480px;
+  }
+  .hero-sub{
+    margin-top:18px;
+    max-width:440px;
+    color:#E8F3FC;
+    font-size:1.05rem;
+    font-weight:500;
+  }
+  .hero-cta{
+    margin-top:30px;
+  }
+  .btn-yellow{
+    display:inline-block;
+    background:var(--yellow);
+    color:var(--blue-deep);
+    font-weight:700;
+    padding:14px 30px;
+    border-radius:4px;
+    text-decoration:none;
+    font-size:0.95rem;
+    letter-spacing:0.02em;
+    transition:transform 0.15s ease;
+  }
+  .btn-yellow:hover{transform:translateY(-2px);}
+  .hero-photo-wrap{
+    flex-shrink:0;
+    width:280px;
+    align-self:flex-end;
+  }
+  .hero-photo-wrap img{
+    width:100%;
+    height:340px;
+    object-fit:cover;
+    border-radius:8px 8px 0 0;
+    border:4px solid rgba(255,255,255,0.15);
+    border-bottom:none;
+    display:block;
+  }
+  @media (max-width: 640px){
+    .hero-photo-wrap{width:100%;}
+    .hero-photo-wrap img{height:260px;}
+  }
+
+  /* Cards Section */
+  .cards-section{background:var(--blue-light);padding:64px 0;}
+  .section-title{font-weight:700;font-size:1.6rem;color:var(--blue-deep);margin-bottom:34px;}
+  .card-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:20px;}
+  @media (max-width: 700px){.card-grid{grid-template-columns:1fr;}}
+  .info-card{background:var(--blue);color:var(--white);border-radius:8px;padding:26px;}
+  .info-card .icon{font-size:1.6rem;margin-bottom:14px;}
+  .info-card h3{font-size:1.1rem;font-weight:700;margin-bottom:8px;}
+  .info-card p{font-size:0.9rem;color:#D7E6F5;}
+
+  /* Ledger Section */
+  .ledger{padding:70px 0;}
+  .log{border-left:3px solid var(--yellow);margin-top:30px;}
+  .log-entry{position:relative;padding:0 0 36px 28px;}
+  .log-entry:last-child{padding-bottom:0;}
+  .log-entry::before{content:'';position:absolute;left:-9px;top:6px;width:13px;height:13px;border-radius:50%;background:var(--blue);border:3px solid var(--yellow);}
+  .log-year{font-weight:700;color:var(--blue);font-size:0.95rem;}
+  .log-text{margin-top:4px;color:var(--slate);max-width:560px;}
+  .log-text strong{color:var(--ink);}
+
+  /* About Section */
+  .about{background:var(--blue-light);padding:64px 0;}
+  .about-grid{display:flex;gap:36px;align-items:flex-start;flex-wrap:wrap;}
+  .about-photo{width:170px;height:170px;border-radius:8px;object-fit:cover;border:4px solid var(--white);flex-shrink:0;}
+  .about-text{flex:1;min-width:260px;}
+  .about p{max-width:600px;color:var(--slate);}
+  .about p + p{margin-top:14px;}
+
+  /* Gallery Section */
+  .gallery-section{padding:64px 0;}
+  .gallery-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:14px;margin-top:8px;}
+  .gallery-grid img{width:100%;height:190px;object-fit:cover;border-radius:6px;cursor:zoom-in;}
+  @media (max-width: 640px){.gallery-grid{grid-template-columns:repeat(2, 1fr);}.gallery-grid img{height:140px;}}
+
+  /* Achievements Section */
+  .achievements-section{background:var(--blue-light);padding:64px 0;}
+  .achv-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:18px;margin-top:8px;}
+  @media (max-width: 640px){.achv-grid{grid-template-columns:repeat(2, 1fr);}}
+  .achv-card{background:var(--white);border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(11,59,111,0.08);}
+  .achv-card img{width:100%;height:150px;object-fit:cover;display:block;cursor:zoom-in;}
+  .achv-meta{padding:14px 16px;}
+  .achv-title{font-size:0.88rem;font-weight:700;color:var(--ink);}
+  .achv-date{font-size:0.78rem;color:var(--blue);font-weight:600;margin-top:4px;}
+
+  /* Testimonials Section */
+  .testimonials-section{padding:64px 0;}
+  .testimonial-grid{display:grid;grid-template-columns:repeat(2, 1fr);gap:22px;margin-top:10px;}
+  @media (max-width: 640px){.testimonial-grid{grid-template-columns:1fr;}}
+  .testimonial-card{background:var(--blue-light);border-radius:8px;padding:24px;display:flex;gap:16px;}
+  .testimonial-avatar{width:48px;height:48px;border-radius:50%;background:var(--blue);color:var(--white);display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;}
+  .testimonial-quote{font-size:0.95rem;color:var(--ink);font-style:italic;}
+  .testimonial-author{margin-top:10px;font-size:0.82rem;font-weight:700;color:var(--blue);}
+
+  /* Contact Section */
+  .contact{background:var(--blue-light);padding:64px 0;}
+  form{max-width:520px;margin-top:24px;display:flex;flex-direction:column;gap:16px;}
+  label{font-size:0.85rem;color:var(--slate);display:block;margin-bottom:6px;font-weight:600;}
+  input, textarea{width:100%;background:var(--white);border:1px solid #CBD8E6;border-radius:6px;color:var(--ink);font-family:'Inter',sans-serif;font-size:1rem;padding:11px 12px;outline:none;transition:border-color 0.2s;}
+  input:focus, textarea:focus{border-color:var(--blue);}
+  textarea{resize:vertical;min-height:90px;}
+  button[type="submit"]{margin-top:6px;align-self:flex-start;background:var(--yellow);color:var(--blue-deep);border:none;padding:13px 28px;font-weight:700;font-size:0.95rem;border-radius:6px;cursor:pointer;}
+  .form-note{font-size:0.82rem;color:var(--slate);margin-top:14px;}
+  .form-status{margin-top:14px;font-size:0.9rem;display:none;}
+
+  .cta-banner{background:var(--blue-deep);color:var(--white);text-align:center;padding:34px 0;font-family:'Poppins',sans-serif;font-weight:700;font-size:1.1rem;}
+  .cta-banner span{color:var(--yellow);}
+
+  footer{background:var(--ink);color:#9FB0C2;padding:24px 0;font-size:0.85rem;}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+  /* SOCIAL ICONS */
+  .social-bar{
+    background:var(--blue-deep);
+    padding:12px 0;
+    border-bottom:2px solid var(--yellow);
+  }
+  .social-bar .wrap{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:nowrap;
+    align-items:center;
+    overflow-x:auto;
+    padding-bottom:4px;
+  }
+  .social-link{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    color:var(--white);
+    text-decoration:none;
+    font-size:0.85rem;
+    font-weight:600;
+    padding:8px 14px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,0.2);
+    transition:transform 0.2s, background 0.2s;
+  }
+  .social-link:hover{transform:translateY(-2px);}
+  .social-link svg{width:18px;height:18px;flex-shrink:0;}
+  .social-link.instagram{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);}
+  .social-link.facebook{background:#1877F2;}
+  .social-link.linkedin{background:#0A66C2;}
+  .social-link.snapchat{background:#FFFC00;color:#000;}
+  .social-link.snapchat svg path{fill:#000;}
+  .social-link.twitter{background:#000;}
+
+  /* HERO PHOTO FIX */
+  .hero-photo-wrap{
+    flex-shrink:0;
+    width:280px;
+    align-self:flex-end;
+  }
+  .hero-photo-wrap img{
+    width:100%;
+    height:340px;
+    object-fit:cover;
+    object-position:top center;
+    border-radius:8px 8px 0 0;
+    border:4px solid rgba(255,255,255,0.3);
+    border-bottom:none;
+    display:block;
+    background:#1565C0;
+  }
+  @media (max-width: 640px){
+    .hero-photo-wrap{width:100%;}
+    .hero-photo-wrap img{height:300px;}
+  }
+
+  /* ZOOM ANIMATION ON ALL PHOTOS */
+  .gallery-grid img,
+  .achv-card img,
+  .about-photo{
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    cursor: zoom-in;
+  }
+  .gallery-grid img:hover,
+  .achv-card img:hover{
+    transform: scale(1.06);
+    box-shadow: 0 8px 28px rgba(11,59,111,0.25);
+    z-index: 2;
+    position: relative;
+  }
+  .about-photo:hover{
+    transform: scale(1.04);
+  }
+
+  /* PROMINENT IST CLOCK */
+  .ist-clock-bar{
+    background:var(--blue-deep);
+    color:var(--white);
+    text-align:center;
+    padding:10px 0;
+    font-family:'Poppins',sans-serif;
+    font-size:0.95rem;
+    letter-spacing:0.04em;
+    border-bottom:2px solid var(--yellow);
+  }
+  .ist-clock-bar .clock-label{
+    color:var(--yellow);
+    font-weight:700;
+    margin-right:8px;
+  }
+  #liveClock{
+    font-weight:600;
+    font-size:1rem;
+    letter-spacing:0.06em;
+  }
+
+  /* Utilities */
+  :focus-visible{outline:2px solid var(--yellow);outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){*{transition:none !important;}}
+
+  .whatsapp-btn{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:var(--white);font-weight:700;font-size:0.95rem;padding:13px 26px;border-radius:4px;text-decoration:none;margin-bottom:28px;transition:transform 0.15s ease;}
+  .whatsapp-btn:hover{transform:translateY(-2px);}
+
+  /* LIGHTBOX WITH ZOOM + SWIPE */
+  .lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.95);
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .lightbox.show { opacity: 1; }
+  .lightbox-content {
+    position: relative;
+    max-width: 95%;
+    max-height: 95%;
+    transform: scale(0.7);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    touch-action: pan-y;
+  }
+  .lightbox.show .lightbox-content { transform: scale(1); }
+  .lightbox img {
+    max-width: 100%;
+    max-height: 95vh;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+    display: block;
+  }
+  .lightbox-close {
+    position: absolute;
+    top: -55px;
+    right: 10px;
+    color: #fff;
+    font-size: 2.8rem;
+    cursor: pointer;
+    z-index: 10001;
+    line-height: 1;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  }
+  .lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    padding: 15px 25px;
+    user-select: none;
+    z-index: 10001;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+  }
+  .lightbox-prev { left: 10px; }
+  .lightbox-next { right: 10px; }
+  .lightbox-counter {
+    position: absolute;
+    bottom: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ccc;
+    font-size: 1rem;
+    background: rgba(0,0,0,0.6);
+    padding: 4px 14px;
+    border-radius: 20px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="nav-row">
+      <a href="#" class="nav-pill brand-pill">
+        <div class="pill-icon">👤</div>
+        <div class="pill-label">
+          <span>Manjit</span>
+          <span>Singh</span>
+        </div>
+      </a>
+      <a href="#core-pillars" class="nav-pill">
+        <div class="pill-icon">🏛️</div>
+        Pillars
+      </a>
+      <a href="#journey" class="nav-pill">
+        <div class="pill-icon">📍</div>
+        Journey
+      </a>
+      <a href="#journey-photos" class="nav-pill">
+        <div class="pill-icon">📷</div>
+        Photos
+      </a>
+    </div>
+    <div class="nav-row">
+      <a href="#achievements" class="nav-pill">
+        <div class="pill-icon">🏆</div>
+        Awards
+      </a>
+      <a href="#testimonials" class="nav-pill">
+        <div class="pill-icon">💬</div>
+        Testimonials
+      </a>
+      <a href="#contact" class="nav-pill">
+        <div class="pill-icon">✉️</div>
+        Contact
+      </a>
+    </div>
+  </div>
+</header>
+
+<div class="ist-clock-bar">
+  <span class="clock-label">🕐 India Standard Time (IST):</span>
+  <span id="liveClock">Loading...</span>
+</div>
+
+<div class="social-bar">
+  <div class="wrap">
+    <a href="https://www.instagram.com/imanjitsandhu" target="_blank" rel="noopener" class="social-link instagram">
+      <svg viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      Instagram
+    </a>
+    <a href="https://www.facebook.com/share/17VJjGTzTR/?mibextid=wwXIfr" target="_blank" rel="noopener" class="social-link facebook">
+      <svg viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      Facebook
+    </a>
+    <a href="https://www.linkedin.com/in/imanjitsandhu" target="_blank" rel="noopener" class="social-link linkedin">
+      <svg viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      LinkedIn
+    </a>
+    <a href="https://snapchat.com/t/DozqfIqi" target="_blank" rel="noopener" class="social-link snapchat">
+      <svg viewBox="0 0 24 24" fill="black"><path d="M12.206.793c.99 0 4.347.276 5.93 3.821.529 1.193.403 3.219.299 4.847l-.003.06c-.012.18-.022.345-.03.51.075.045.203.09.401.09.3-.016.659-.12 1.033-.301.165-.088.344-.104.464-.104.182 0 .359.029.509.09.45.149.734.479.734.838.015.449-.39.839-1.213 1.168-.089.029-.209.075-.344.119-.45.135-1.139.36-1.333.81-.09.224-.061.524.12.868l.015.015c.06.136 1.526 3.475 4.791 4.014.255.044.435.27.42.509 0 .075-.015.149-.045.225-.24.569-1.273.988-3.146 1.271-.059.091-.12.375-.164.57-.029.179-.074.36-.134.553-.076.271-.27.405-.555.405h-.03c-.135 0-.313-.031-.538-.074-.36-.075-.765-.135-1.273-.135-.3 0-.599.015-.913.074-.6.104-1.123.464-1.723.884-.853.599-1.826 1.288-3.294 1.288-.06 0-.119-.015-.18-.015h-.149c-1.468 0-2.427-.675-3.279-1.288-.599-.42-1.107-.779-1.707-.884-.314-.045-.629-.074-.928-.074-.54 0-.958.089-1.272.149-.211.043-.391.074-.54.074-.374 0-.523-.224-.583-.42-.061-.192-.09-.389-.135-.567-.046-.181-.105-.494-.166-.57-1.918-.222-2.95-.642-3.189-1.226-.031-.063-.052-.15-.055-.225-.015-.243.165-.465.42-.509 3.264-.54 4.73-3.879 4.791-4.02l.016-.029c.18-.345.224-.645.119-.869-.195-.434-.884-.658-1.332-.809-.121-.029-.24-.074-.346-.119-1.107-.435-1.257-.93-1.197-1.273.09-.479.674-.793 1.168-.793.146 0 .27.029.383.074.42.194.789.3 1.104.3.234 0 .384-.06.465-.105l-.046-.569c-.098-1.626-.229-3.651.294-4.837C7.877 1.07 11.236.793 12.206.793z"/></svg>
+      Snapchat
+    </a>
+    <a href="https://x.com/imanjitsandhu?s=11" target="_blank" rel="noopener" class="social-link twitter">
+      <svg viewBox="0 0 24 24" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      X
+    </a>
+  </div>
+</div>
+  <div class="wrap hero-inner">
+    <div class="hero-text">
+      <div class="eyebrow">Educator since 2013 · Student mentor</div>
+      <h1 class="hero-title">Guide Your Future</h1>
+      <p class="hero-sub">I'm Manjit Singh. Since 2013 I've worked as an educator, and spent that time helping students figure out what to study, where to apply, and how to actually get there.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn-yellow">Get Guidance</a>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <img src="profile.jpg" alt="Manjit Singh - Educator & Student Mentor" width="280" height="340">
+    </div>
+  </div>
+</section>
+
+<section class="cards-section" id="core-pillars">
+  <div class="wrap">
+    <div class="section-title">Core Pillars of Mentorship</div>
+    <div class="card-grid">
+      <div class="info-card">
+        <div class="icon">🎓</div>
+        <h3>Academic Counseling</h3>
+        <p>Tailored guidance to help students choose streams and academic pathways that align with their strengths and long-term aspirations.</p>
+      </div>
+      <div class="info-card">
+        <div class="icon">🧭</div>
+        <h3>Career Mapping</h3>
+        <p>In-depth discovery of vocational paths, emerging modern careers, and strategic milestone planning to ensure clarity and success.</p>
+      </div>
+      <div class="info-card">
+        <div class="icon">📝</div>
+        <h3>Profile Building</h3>
+        <p>Comprehensive profile reviews, continuous skill building, and interview preparation to ace institutional and competitive requirements.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ledger" id="journey">
+  <div class="wrap">
+    <div class="section-title">The Professional Journey Ledger</div>
+    <div class="log">
+      <div class="log-entry">
+        <div class="log-year">2013</div>
+        <div class="log-text">Begated journey as an <strong>Educator</strong>, focusing on foundational teaching methodologies and identifying unique learning parameters.</div>
+      </div>
+      <div class="log-entry">
+        <div class="log-year">2016</div>
+        <div class="log-text">Formally institutionalized targeted <strong>Student Mentorship</strong> models, bridging classroom learning with career roadmaps.</div>
+      </div>
+      <div class="log-entry">
+        <div class="log-year">2020</div>
+        <div class="log-text">Pioneered interactive digital learning modules and remote counseling systems to assist students through critical academic transitions.</div>
+      </div>
+      <div class="log-entry">
+        <div class="log-year">2024</div>
+        <div class="log-text">Recognized for delivering high-impact workshops on career mapping and counseling in regional and community institutions.</div>
+      </div>
+      <div class="log-entry">
+        <div class="log-year">2025</div>
+        <div class="log-text">Expanded active outreach to promote cultural awareness and localized regional empowerment in academic forums.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <img src="about.jpg" alt="Manjit Singh" class="about-photo">
+      <div class="about-text">
+        <div class="section-title" style="margin-bottom:14px;">About Manjit Singh</div>
+        <p>With over a decade of dedicated professional experience in education and youth development, I believe mentorship is the bridge between a student’s current aptitude and their ultimate destiny.</p>
+        <p>My holistic framework ensures that students don't just clear benchmarks blindly, but intentionally realize their unique talents, build resilience, and establish robust professional values.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery-section" id="journey-photos">
+  <div class="wrap">
+    <div class="section-title">Moments From the Journey</div>
+    <div class="gallery-grid">
+      <img src="journey1.jpg" alt="Manjit Singh with large group of students in uniform" loading="lazy">
+      <img src="journey2.jpg" alt="Manjit Singh with students in traditional attire" loading="lazy">
+      <img src="journey3.jpg" alt="Group photo with students on stage steps" loading="lazy">
+      <img src="journey4.jpg" alt="Manjit Singh with students and teachers at cultural program" loading="lazy">
+      <img src="journey5.jpg" alt="Students and staff group photo at Seaba School" loading="lazy">
+      <img src="journey6.jpg" alt="Manjit Singh with young students in traditional dress" loading="lazy">
+      <img src="journey7.jpg" alt="Selfie with girl students" loading="lazy">
+      <img src="journey8.jpg" alt="Manjit Singh with senior boys group" loading="lazy">
+      <img src="journey9.jpg" alt="Staff and students group photo outdoors" loading="lazy">
+      <img src="journey10.jpg" alt="Manjit Singh with individual student" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="achievements-section" id="achievements">
+  <div class="wrap">
+    <div class="section-title">Awards, Workshops & School Functions</div>
+    <div class="achv-grid">
+      <div class="achv-card">
+        <img src="award1.jpg" alt="Punjabi Day Event - Stage Ceremony" loading="lazy">
+        <div class="achv-meta">
+          <div class="achv-title">International Maa Boli Diwas / Punjabi Day Celebration</div>
+          <div class="achv-date">2025</div>
+        </div>
+      </div>
+      <div class="achv-card">
+        <img src="award2.jpg" alt="Outstanding Mentor Honor" loading="lazy">
+        <div class="achv-meta">
+          <div class="achv-title">Excellence in Student Mentorship Award</div>
+          <div class="achv-date">2024</div>
+        </div>
+      </div>
+      <div class="achv-card">
+        <img src="award3.jpg" alt="Career Seminar Keynote" loading="lazy">
+        <div class="achv-meta">
+          <div class="achv-title">Annual Career Guidance Conclave Keynote</div>
+          <div class="achv-date">2023</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials-section" id="testimonials">
+  <div class="wrap">
+    <div class="section-title">Voices of Transformation</div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-avatar">AS</div>
+        <div>
+          <p class="testimonial-quote">"Manjit Sir didn't just help me choose an academic stream; he helped me find my confidence. His strategy gave me absolute clarity when I felt stuck."</p>
+          <div class="testimonial-author">— Amanpreet Singh, University Alumnus</div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-avatar">KP</div>
+        <div>
+          <p class="testimonial-quote">"As parents, we were unsure about the right path for our child. Mr. Manjit’s systematic mapping cleared every doubt and provided a realistic plan."</p>
+          <div class="testimonial-author">— Kuldeep Kaur, Parent</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="section-title">Connect for Guidance</div>
+    
+    <a href="https://wa.me/919417264400" class="whatsapp-btn" target="_blank" rel="noopener">
+      <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16" style="vertical-align:middle;">
+        <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.69-4.98c-.202-.101-1.194-.588-1.378-.653-.185-.066-.32-.099-.455.101-.134.2-.522.653-.64.784-.117.13-.235.147-.437.046-.202-.101-.853-.314-1.624-1.002-.6-.535-1.004-1.199-1.122-1.402-.117-.202-.012-.311.089-.412.09-.09.202-.234.302-.35.101-.117.135-.198.203-.33.067-.133.034-.25-.018-.35-.052-.102-.455-1.1-.623-1.503-.164-.397-.33-.342-.455-.349-.117-.007-.253-.007-.388-.007a.75.75 0 0 0-.544.255c-.185.2-.705.688-.705 1.681 0 1.01.735 1.986.837 2.122.101.134 1.448 2.21 3.508 3.1a14.25 14.25 0 0 0 1.171.425c.49.156.935.134 1.287.081.393-.06 1.194-.488 1.364-1.03.171-.542.171-.1.12-.2-.051-.1-.185-.15-.387-.25z"/>
+      </svg>
+      Chat directly via WhatsApp
+    </a>
+
+    <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div>
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required placeholder="John Doe">
+      </div>
+      <div>
+        <label for="email">Your Email Address</label>
+        <input type="email" id="email" name="email" required placeholder="john@example.com">
+      </div>
+      <div>
+        <label for="message">Message / Requirements</label>
+        <textarea id="message" name="message" required placeholder="How can I assist you in your career or educational journey?"></textarea>
+      </div>
+      <button type="submit">Send Message</button>
+      <div id="formStatus" class="form-status"></div>
+    </form>
+    <div class="form-note">Responses are typically sent within 24-48 business hours.</div>
+  </div>
+</section>
+
+<div class="cta-banner">
+  Ready to shape your future? <span>Get in touch today!</span>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div>&copy; 2026 Manjit Singh. All rights reserved.</div>
+    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+      <a href="https://www.instagram.com/imanjitsandhu" target="_blank" rel="noopener" style="color:#E1306C;text-decoration:none;font-size:1.4rem;" title="Instagram">&#x1F4F7;</a>
+      <a href="https://www.facebook.com/share/17VJjGTzTR/?mibextid=wwXIfr" target="_blank" rel="noopener" style="color:#1877F2;text-decoration:none;font-size:1.4rem;" title="Facebook">&#x1F426;</a>
+      <a href="https://www.linkedin.com/in/imanjitsandhu" target="_blank" rel="noopener" style="color:#0A66C2;text-decoration:none;font-size:0.85rem;font-weight:700;background:#0A66C2;color:white;padding:3px 8px;border-radius:4px;" title="LinkedIn">in</a>
+      <a href="https://snapchat.com/t/DozqfIqi" target="_blank" rel="noopener" style="color:#FFFC00;text-decoration:none;font-size:1.4rem;" title="Snapchat">👻</a>
+      <a href="https://x.com/imanjitsandhu?s=11" target="_blank" rel="noopener" style="color:white;text-decoration:none;font-weight:700;font-size:0.95rem;" title="X">𝕏</a>
+    </div>
+    <div id="istClock" style="color:#9FB0C2;font-size:0.8rem;"></div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+  <div class="lightbox-content">
+    <span class="lightbox-close">&times;</span>
+    <span class="lightbox-nav lightbox-prev">&#8249;</span>
+    <img id="lightbox-image" src="" alt="">
+    <span class="lightbox-nav lightbox-next">&#8250;</span>
+    <div id="lightbox-counter" class="lightbox-counter"></div>
+  </div>
+</div>
+
+<script>
+  // Form submission handler
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('formStatus');
+  form.addEventListener('submit', async function(e){
+    if(form.action.includes('YOUR_FORM_ID')) {
+      e.preventDefault();
+      status.style.display = 'block';
+      status.style.color = '#1565C0';
+      status.textContent = 'Form configured properly. (Note: Replace YOUR_FORM_ID with a valid Formspree token to activate live delivery).';
+      return;
+    }
+    e.preventDefault();
+    status.style.display = 'block';
+    status.style.color = '#5B6B7F';
+    status.textContent = 'Sending...';
+    try{
+      const res = await fetch(form.action, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} });
+      if(res.ok){
+        status.style.color = '#1565C0';
+        status.textContent = 'Thanks — your message has been sent. I'll get back to you soon.';
+        form.reset();
+      } else {
+        status.style.color = '#C0392B';
+        status.textContent = 'Something went wrong. Please try again.';
+      }
+    } catch(err){
+      status.style.color = '#C0392B';
+      status.textContent = 'Something went wrong. Please try again.';
+    }
+  });
+
+  // Live IST Clock — updates every second
+  function updateISTClock(){
+    const now = new Date();
+    const dateStr = now.toLocaleString('en-IN', {
+      timeZone: 'Asia/Kolkata',
+      weekday: 'short',
+      day: '2-digit',
+      month: 'short',
+      year: 'numeric'
+    });
+    const timeStr = now.toLocaleString('en-IN', {
+      timeZone: 'Asia/Kolkata',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: true
+    });
+    const full = dateStr + ' · ' + timeStr;
+    const live = document.getElementById('liveClock');
+    const footer = document.getElementById('istClock');
+    if(live) live.textContent = full;
+    if(footer) footer.textContent = full + ' IST';
+  }
+  updateISTClock();
+  setInterval(updateISTClock, 1000);
+
+  // Lightbox with Zoom + Swipe
+  let currentImages = [];
+  let currentIndex = 0;
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  function openLightbox(imgElement) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-image');
+    const container = imgElement.closest('.gallery-grid, .achv-grid');
+    currentImages = Array.from(container.querySelectorAll('img'));
+    currentIndex = currentImages.indexOf(imgElement);
+
+    lightboxImg.src = imgElement.src;
+    updateCounter();
+    lightbox.classList.add('show');
+    lightbox.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.classList.remove('show');
+    setTimeout(() => {
+      lightbox.style.display = 'none';
+      document.body.style.overflow = 'visible';
+    }, 350);
+  }
+
+  function showImage(index) {
+    if (index < 0) index = currentImages.length - 1;
+    if (index >= currentImages.length) index = 0;
+    currentIndex = index;
+    document.getElementById('lightbox-image').src = currentImages[index].src;
+    updateCounter();
+  }
+
+  function updateCounter() {
+    document.getElementById('lightbox-counter').textContent = `${currentIndex + 1} / ${currentImages.length}`;
+  }
+
+  function handleSwipe() {
+    const threshold = 80;
+    if (touchEndX < touchStartX - threshold) showImage(currentIndex + 1);
+    else if (touchEndX > touchStartX + threshold) showImage(currentIndex - 1);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.gallery-grid img, .achv-grid img').forEach(img => {
+      img.addEventListener('click', () => openLightbox(img));
+    });
+
+    document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+    document.querySelector('.lightbox-prev').addEventListener('click', () => showImage(currentIndex - 1));
+    document.querySelector('.lightbox-next').addEventListener('click', () => showImage(currentIndex + 1));
+
+    const lightboxContent = document.querySelector('.lightbox-content');
+    lightboxContent.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; });
+    lightboxContent.addEventListener('touchend', e => { touchEndX = e.changedTouches[0].screenX; handleSwipe(); });
+
+    document.addEventListener('keydown', (e) => {
+      const lightbox = document.getElementById('lightbox');
+      if (lightbox.style.display === 'flex') {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+        if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+      }
+    });
+
+    document.getElementById('lightbox').addEventListener('click', (e) => {
+      if (e.target.id === 'lightbox') closeLightbox();
+    });
+  });
+</script>
+
+</body>
+</html>
